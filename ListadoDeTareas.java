@@ -1,3 +1,4 @@
+
 public class ListaDeTareas {
     public static void main(String[] args) {
         ListaDeTareas listaDeTareas = new ListaDeTareas();
@@ -22,7 +23,7 @@ public class ListaDeTareas {
                     break;
                 case 2:
                     listaDeTareas.listarTareas();
-                    System.out.print("Ingrese el índice de la tarea a marcar como completada: ");
+                    System.out.print("Ingrese el número de la tarea a marcar como completada: ");
                     int indice = ConsoleReader.readInt();
                     listaDeTareas.marcarTareaComoCompletada(indice);
                     break;
@@ -39,6 +40,26 @@ public class ListaDeTareas {
                     System.out.println("Has salido correctamente del programa. ¡Hasta pronto!");
                     break;
             }
-        } while (opcion != 6);
+        } while (seleccion_tarea!= 6);
+    }
+
+    public static void agregarTarea(String descripcion) {
+        // Implementar
+    }
+
+    public static void marcarTareaComoCompletada(int indice) {
+        // Implementar
+    }
+
+    public static void listarTareas() {
+        // Implementar
+    }
+
+    public static void listarTareasPendientes() {
+        // Implementar
+    }
+    
+    public static void listarTareasCompletadas() {
+        // Implementar
     }
 }
