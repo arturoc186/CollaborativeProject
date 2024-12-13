@@ -6,3 +6,9 @@ Este proyecto consta de **2 fases** una fase A, y una fase B. La fase A es un co
 |-----------|-----------|-----------|
 | Fase 1. ConversorMonedas  | JoseGG16   | arturoc186    |
 | Fase 2. ListadoDeTareas   | arturoc186   | JoseGG16    |
+
+
+# Fase 1.
+
+
+# Fase 2.
