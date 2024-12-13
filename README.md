@@ -4,11 +4,23 @@ Este proyecto consta de **2 fases** una fase A, y una fase B. La fase A es un co
 
 | Fase | Encargado de Main | Encargado de funciones |
 |-----------|-----------|-----------|
-| Fase 1. ConversorMonedas  | JoseGG16   | arturoc186    |
+| Fase 1. CalculadoradeMonedas  | JoseGG16   | arturoc186    |
 | Fase 2. ListadoDeTareas   | arturoc186   | JoseGG16    |
 
 
-# Fase 1.
+# Calculadora de monedas.
+ public static double convertirAMonedas(double valor, double tasaConversion) {
 
+    }
 
-# Fase 2.
+    // Función para obtener la tasa de conversión de una moneda a euros
+    public static double obtenerTasaConversion(String moneda) {
+      
+    }
+
+    // Función para mostrar los resultados de las conversiones
+    public static void mostrarResultados(String[] monedas, double[] valores, double[] tasasConversion) {
+      
+        }
+
+# Lista de tareas.
