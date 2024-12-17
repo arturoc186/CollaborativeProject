@@ -1,7 +1,6 @@
 public class calculadorademonedas {
 
     public static void main(String[] args) {
-        // Preguntar cantidad de monedas a convertir
         System.out.print("Introduce la cantidad de monedas que deseas convertir: ");
         int cantidadMonedas = ConsoleReader.readInt();
 
@@ -9,27 +8,66 @@ public class calculadorademonedas {
             System.out.println("La cantidad de monedas debe ser mayor que 0.");
             return;
         }
-
-        // Arrays para almacenar los datos
+        
         String[] monedas = new String[cantidadMonedas];
         double[] valores = new double[cantidadMonedas];
         double[] tasasConversion = new double[cantidadMonedas];
-
-        // Obtener moneda, valor y tasa de conversión
+        
         for (int i = 0; i < cantidadMonedas; i++) {
-            // Nombre de la moneda
             System.out.print("Introduce el nombre de la moneda " + (i + 1) + ": ");
             monedas[i] = ConsoleReader.readString();
-
-            // Valor de la moneda
+            
             System.out.print("Introduce el valor en " + monedas[i] + ": ");
             valores[i] = ConsoleReader.readDouble();
-
-            // Obtener tasa de conversión (debería indicar el valor de la moneda en euros)
+            
             tasasConversion[i] = obtenerTasaConversion(monedas[i]);
         }
-
-        // Mostrar resultados
+        
         mostrarResultados(monedas, valores, tasasConversion);
+    }
+
+    /**
+     * Convierte el valor de una moneda a euros utilizando la tasa de conversión.
+     *
+     * @param valor El valor de la moneda en su unidad original.
+     * @param tasaConversion La tasa de conversión de la moneda a euros.
+     * @return El valor de la moneda en euros.
+     */
+    public static double convertirAMonedas(double valor, double tasaConversion) {
+        return valor * tasaConversion;
+    }
+
+    /**
+     * Solicita al usuario la tasa de conversión de una moneda a euros y la valida (tasa > 0).
+     *
+     * @param moneda El nombre de la moneda cuya tasa de conversión se va a obtener.
+     * @return La tasa de conversión de la moneda a euros.
+     */
+    public static double obtenerTasaConversion(String moneda) {
+        double tasa = -1;
+        while (tasa <= 0) {
+            System.out.print("Introduce la tasa de conversión de " + moneda + " a euros: ");
+            tasa = ConsoleReader.readDouble();
+            if (tasa <= 0) {
+                System.out.println("La tasa de conversión debe ser un valor positivo mayor que 0.");
+            }
+        }
+        return tasa;
+    }
+
+    /**
+     * Muestra los resultados de la conversión de cada moneda a euros en la consola.
+     * Para cada moneda, se muestra el valor convertido a euros.
+     *
+     * @param monedas Un array con los nombres de las monedas.
+     * @param valores Un array con los valores de las monedas.
+     * @param tasasConversion Un array con las tasas de conversión de cada moneda a euros.
+     */
+    public static void mostrarResultados(String[] monedas, double[] valores, double[] tasasConversion) {
+        System.out.println("\nResultados de las conversiones:");
+        for (int i = 0; i < monedas.length; i++) {
+            double resultadoEnEuros = convertirAMonedas(valores[i], tasasConversion[i]);
+            System.out.println("El valor en " + monedas[i] + " convertido a euros es: " + resultadoEnEuros + " EUR");
+        }
     }
 }
